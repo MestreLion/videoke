@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Videokê RES
+GenericName=Karaoke
+Comment=Cante no Karaokê da RES Eletronics!
+# See http://standards.freedesktop.org/menu-spec/latest/apa.html
+Categories=AudioVideo;Video;Audio;Game;Player;Amusement;
+Terminal=false
+StartupNotify=true
+StartupWMClass=__main__.py
+Icon=videoke
+Exec=videoke %U
