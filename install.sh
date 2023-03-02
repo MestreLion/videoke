@@ -15,14 +15,7 @@ bin=$bindir/$slug
 confdir=${XDG_CONFIG_HOME:-$HOME/.config}/$slug
 config=$confdir/${slug}.ini
 
-if ! dpkg -l python-pygame &>/dev/null; then
-	sudo apt install python3-pygame
-fi
-
-if ! pip3 show ffpyplayer &>/dev/null; then
-	pip3 install --user ffpyplayer
-fi
-
+pip3 install --user --upgrade -r requirements.txt
 
 # Read config or create a default one
 if [[ ! -f "$config" ]]; then
