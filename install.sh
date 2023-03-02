@@ -34,7 +34,7 @@ mkdir --parents -- "$bindir"
 rm -f -- "$bin"    && ln -s -- "$exec"      "$bin"
 
 
-for icon in ./${slug}*.png ; do
+for icon in "$mydir"/${slug}*.png ; do
 	size=$(identify -format '%w' "$icon" 2>/dev/null || echo 16)
 	xdg-icon-resource install --noupdate --novendor --size "$size" "$icon" "videoke"
 done
