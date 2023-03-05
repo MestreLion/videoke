@@ -15,7 +15,7 @@ bin=$bindir/$slug
 confdir=${XDG_CONFIG_HOME:-$HOME/.config}/$slug
 config=$confdir/${slug}.ini
 
-pip3 install --user --upgrade -r requirements.txt
+pip3 install --user --upgrade -r "$mydir"/requirements.txt
 
 # Read config or create a default one
 if [[ ! -f "$config" ]]; then
