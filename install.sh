@@ -9,7 +9,7 @@ myname="${0##*/}"
 mydir=$(dirname "$(readlink -f "$0")")
 
 exec=${mydir}/${slug}.sh
-desktop=${slug}.desktop
+desktop=${mydir}/${slug}.desktop
 bindir=${XDG_BIN_HOME:-$HOME/.local/bin}
 bin=$bindir/$slug
 confdir=${XDG_CONFIG_HOME:-$HOME/.config}/$slug
@@ -24,8 +24,7 @@ if [[ ! -f "$config" ]]; then
 fi
 
 mkdir --parents -- "$bindir"
-rm -f -- "$bin"    && ln -s -- "$exec"      "$bin"
-
+ln -sf -- "$exec" "$bin"
 
 for icon in "$mydir"/${slug}*.png ; do
 	size=$(identify -format '%w' "$icon" 2>/dev/null || echo 16)
